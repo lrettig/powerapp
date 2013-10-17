@@ -22,6 +22,7 @@
 		D87BF488180F5DFA00935041 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87BF467180F5DFA00935041 /* UIKit.framework */; };
 		D87BF490180F5DFA00935041 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87BF48E180F5DFA00935041 /* InfoPlist.strings */; };
 		D87BF492180F5DFA00935041 /* PowerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF491180F5DFA00935041 /* PowerAppTests.m */; };
+		D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF49C180F9FF500935041 /* PAGoalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		D87BF48D180F5DFA00935041 /* PowerAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PowerAppTests-Info.plist"; sourceTree = "<group>"; };
 		D87BF48F180F5DFA00935041 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D87BF491180F5DFA00935041 /* PowerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerAppTests.m; sourceTree = "<group>"; };
+		D87BF49B180F9FF500935041 /* PAGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAGoalViewController.h; sourceTree = "<group>"; };
+		D87BF49C180F9FF500935041 /* PAGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAGoalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				D87BF472180F5DFA00935041 /* PAAppDelegate.h */,
 				D87BF473180F5DFA00935041 /* PAAppDelegate.m */,
 				D87BF475180F5DFA00935041 /* Main.storyboard */,
+				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
+				D87BF49C180F9FF500935041 /* PAGoalViewController.m */,
 				D87BF478180F5DFA00935041 /* PAFirstViewController.h */,
 				D87BF479180F5DFA00935041 /* PAFirstViewController.m */,
 				D87BF47B180F5DFA00935041 /* PASecondViewController.h */,
@@ -259,6 +264,7 @@
 				D87BF47A180F5DFA00935041 /* PAFirstViewController.m in Sources */,
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
 				D87BF47D180F5DFA00935041 /* PASecondViewController.m in Sources */,
+				D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
