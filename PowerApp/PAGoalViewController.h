@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PAGoalViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *buttonAg;
 
 @end
