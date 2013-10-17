@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PAGoalViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIButton *buttonAg;
+@interface PAGoalViewController : UIViewController {
+    NSArray *elements;
+    NSArray *elementButtons;
+}
+@property (strong, nonatomic) IBOutlet UIView *elementsView;
 
 @end

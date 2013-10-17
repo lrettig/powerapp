@@ -26,4 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)back:(UIStoryboardSegue *)segue {
+    NSLog(@"Popping back to this view controller!");
+    // reset UI elements etc here
+}
+
 @end

@@ -102,6 +102,7 @@
         <scene sceneID="KQX-Ma-79v">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiE-Oj-EjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QR9-ap-QPh" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="EwR-XX-QTI" customClass="PAGoalViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0mM-8B-ieS"/>
@@ -111,40 +112,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Let's work on" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="TRh-tp-AVf">
-                                <rect key="frame" x="20" y="65" width="280" height="39"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Pick an area to start, or go random" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Zjg-Yj-dik">
-                                <rect key="frame" x="20" y="165" width="280" height="39"/>
+                                <rect key="frame" x="20" y="163" width="280" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Build an incredible company" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-xI-qm1">
-                                <rect key="frame" x="20" y="96" width="280" height="77"/>
+                                <rect key="frame" x="20" y="67" width="280" height="77"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcX-MU-hhM" userLabel="viewForButtons">
+                                <rect key="frame" x="20" y="199" width="280" height="349"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGS-3N-LuW">
+                                <rect key="frame" x="20" y="138" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Status: looking good! Click for details">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HGo-Mi-Kyk">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="FWY-6B-vmU">
                             <connections>
-                                <action selector="didPressBack:" destination="EwR-XX-QTI" id="leE-E7-cZP"/>
+                                <segue destination="QR9-ap-QPh" kind="unwind" unwindAction="back:" id="edD-m7-ANy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="elementsView" destination="vcX-MU-hhM" id="FYX-F4-ig3"/>
+                        <segue destination="GSc-qz-EAg" kind="push" identifier="segueToElementDetail" id="YT2-0C-W4I"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1580" y="498"/>
+        </scene>
+        <!--Element Detail View Controller-->
+        <scene sceneID="W7p-OZ-ZXN">
+            <objects>
+                <viewController id="GSc-qz-EAg" customClass="PAElementDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X9A-iT-XW8"/>
+                        <viewControllerLayoutGuide type="bottom" id="nkQ-co-Gig"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ETc-pU-IB6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Text that describes the selected element in detail goes here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j6y-c2-a69" userLabel="labelElementDetails">
+                                <rect key="frame" x="20" y="71" width="280" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="What ELEMENT means:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="278" translatesAutoresizingMaskIntoConstraints="NO" id="3eB-Nk-TG5" userLabel="labelElementMeans">
+                                <rect key="frame" x="21" y="189" width="278" height="26"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kmL-e9-xIW" userLabel="tableElementBreakdown">
+                                <rect key="frame" x="20" y="223" width="280" height="325"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HF4-PB-uRE"/>
+                    <connections>
+                        <outlet property="labelElementDetails" destination="j6y-c2-a69" id="5w3-39-Cxn"/>
+                        <outlet property="labelElementMeans" destination="3eB-Nk-TG5" id="CXJ-TU-SDM"/>
+                        <outlet property="tableElementBreakdown" destination="kmL-e9-xIW" id="Tjj-zt-a5q"/>
+                        <outlet property="view" destination="ETc-pU-IB6" id="LZZ-re-6Pv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baC-Oe-Xme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="498"/>
         </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">

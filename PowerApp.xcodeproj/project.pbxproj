@@ -23,6 +23,8 @@
 		D87BF490180F5DFA00935041 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87BF48E180F5DFA00935041 /* InfoPlist.strings */; };
 		D87BF492180F5DFA00935041 /* PowerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF491180F5DFA00935041 /* PowerAppTests.m */; };
 		D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF49C180F9FF500935041 /* PAGoalViewController.m */; };
+		D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A11810982F00935041 /* PAElementDetailViewController.m */; };
+		D87BF4A41810A68600935041 /* SubElementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BF4A31810A68600935041 /* SubElementCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		D87BF491180F5DFA00935041 /* PowerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerAppTests.m; sourceTree = "<group>"; };
 		D87BF49B180F9FF500935041 /* PAGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAGoalViewController.h; sourceTree = "<group>"; };
 		D87BF49C180F9FF500935041 /* PAGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAGoalViewController.m; sourceTree = "<group>"; };
+		D87BF4A01810982F00935041 /* PAElementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAElementDetailViewController.h; sourceTree = "<group>"; };
+		D87BF4A11810982F00935041 /* PAElementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAElementDetailViewController.m; sourceTree = "<group>"; };
+		D87BF4A31810A68600935041 /* SubElementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubElementCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +128,13 @@
 				D87BF475180F5DFA00935041 /* Main.storyboard */,
 				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
 				D87BF49C180F9FF500935041 /* PAGoalViewController.m */,
+				D87BF4A01810982F00935041 /* PAElementDetailViewController.h */,
+				D87BF4A11810982F00935041 /* PAElementDetailViewController.m */,
 				D87BF478180F5DFA00935041 /* PAFirstViewController.h */,
 				D87BF479180F5DFA00935041 /* PAFirstViewController.m */,
 				D87BF47B180F5DFA00935041 /* PASecondViewController.h */,
 				D87BF47C180F5DFA00935041 /* PASecondViewController.m */,
+				D87BF4A31810A68600935041 /* SubElementCell.xib */,
 				D87BF47E180F5DFA00935041 /* Images.xcassets */,
 				D87BF46A180F5DFA00935041 /* Supporting Files */,
 			);
@@ -239,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87BF4A41810A68600935041 /* SubElementCell.xib in Resources */,
 				D87BF47F180F5DFA00935041 /* Images.xcassets in Resources */,
 				D87BF46E180F5DFA00935041 /* InfoPlist.strings in Resources */,
 				D87BF477180F5DFA00935041 /* Main.storyboard in Resources */,
@@ -263,6 +272,7 @@
 				D87BF470180F5DFA00935041 /* main.m in Sources */,
 				D87BF47A180F5DFA00935041 /* PAFirstViewController.m in Sources */,
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
+				D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */,
 				D87BF47D180F5DFA00935041 /* PASecondViewController.m in Sources */,
 				D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */,
 			);
