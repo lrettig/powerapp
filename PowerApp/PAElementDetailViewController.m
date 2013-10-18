@@ -7,6 +7,7 @@
 //
 
 #import "PAElementDetailViewController.h"
+#import "PASubElementViewController.h"
 
 @interface PAElementDetailViewController ()
 
@@ -75,7 +76,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    subelementToSend = self.elementSubElements[indexPath.row];
+    [self performSegueWithIdentifier:@"segueToSubelement" sender:self];
+}
 
+#pragma mark - Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    PASubElementViewController *destination = [segue destinationViewController];
+    NSLog(@"prepareForSegue to %@", destination);
+
+    // Pass in relevant data items (this could be done in a cleaner fashion)
+    destination.elementName = self.elementName;
+    destination.subelementName = subelementToSend;
 }
 
 @end

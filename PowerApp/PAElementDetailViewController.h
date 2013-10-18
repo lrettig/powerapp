@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PAElementDetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface PAElementDetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+    NSString *subelementToSend;
+}
+
 @property (strong, nonatomic) IBOutlet UILabel *labelElementDetails;
 @property (strong, nonatomic) IBOutlet UILabel *labelElementMeans;
 @property (strong, nonatomic) IBOutlet UITableView *tableElementBreakdown;

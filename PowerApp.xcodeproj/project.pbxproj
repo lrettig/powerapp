@@ -28,6 +28,7 @@
 		D87BF4A71810B06400935041 /* PAApplicationState.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A61810B06400935041 /* PAApplicationState.m */; };
 		D87BF4AA1810B12900935041 /* PATask.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A91810B12900935041 /* PATask.m */; };
 		D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AC1810B20C00935041 /* PAConstants.m */; };
+		D87BF4B01811A71400935041 /* PASubElementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AF1811A71400935041 /* PASubElementViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		D87BF4A91810B12900935041 /* PATask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PATask.m; sourceTree = "<group>"; };
 		D87BF4AB1810B20C00935041 /* PAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConstants.h; sourceTree = "<group>"; };
 		D87BF4AC1810B20C00935041 /* PAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConstants.m; sourceTree = "<group>"; };
+		D87BF4AE1811A71400935041 /* PASubElementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASubElementViewController.h; sourceTree = "<group>"; };
+		D87BF4AF1811A71400935041 /* PASubElementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASubElementViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				D87BF4A51810B06400935041 /* PAApplicationState.h */,
 				D87BF4A61810B06400935041 /* PAApplicationState.m */,
 				D87BF475180F5DFA00935041 /* Main.storyboard */,
+				D87BF4AE1811A71400935041 /* PASubElementViewController.h */,
+				D87BF4AF1811A71400935041 /* PASubElementViewController.m */,
 				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
 				D87BF49C180F9FF500935041 /* PAGoalViewController.m */,
 				D87BF4A01810982F00935041 /* PAElementDetailViewController.h */,
@@ -287,6 +292,7 @@
 				D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */,
 				D87BF4A71810B06400935041 /* PAApplicationState.m in Sources */,
 				D87BF470180F5DFA00935041 /* main.m in Sources */,
+				D87BF4B01811A71400935041 /* PASubElementViewController.m in Sources */,
 				D87BF47A180F5DFA00935041 /* PAFirstViewController.m in Sources */,
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
 				D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */,
