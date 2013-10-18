@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.labelGoalName.text = self.goal.name;
+//    seguePath = -1;
 
     // Load the list of elements from the master
     NSMutableArray *elementsTemp = [NSMutableArray array];
@@ -51,6 +52,7 @@
     
     // Add buttons for each element
     int i = 0;
+    numElementsLeft = 0;
     NSMutableArray *elementButtonsTemp = [NSMutableArray array];
     for (; i<[elements count]; i++) {
         UIButton *button = [self makeElementButton:elements[i] width:btn_width height:btn_height];
@@ -65,6 +67,14 @@
                                     y_start+row*(y_spacing+btn_height),
                                     btn_width,
                                     btn_height)];
+        
+        // If we've already set scores for all of this element's subelements,
+        // "gray out" the button now.
+        if ([self.goal finishedScoringElement:i])
+            [button setAlpha:0.2];
+        else
+            numElementsLeft++;
+
         [self.elementsView addSubview:button];
         [elementButtonsTemp addObject:button];
     }
@@ -72,7 +82,7 @@
     // Finally, add a "random" button
     int row = floor(i/num_cols);
     int col = i % num_cols;
-    UIButton *randomButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    randomButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     randomButton.tag = i;
     [randomButton addTarget:self action:@selector(randomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [randomButton setTitle:@"Random" forState:UIControlStateNormal];
@@ -84,10 +94,23 @@
                                       y_start+row*(y_spacing+btn_height),
                                       bottom_btn_width,
                                       btn_height)];
+    if (!numElementsLeft)
+        [randomButton setAlpha:0.2];
     [self.elementsView addSubview:randomButton];
-    
+
     // Save the list of buttons
     elementButtons = [NSArray arrayWithArray:elementButtonsTemp];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Mark as "done" any elements that we've finished scoring.
+    for (int i=0; i<[elementButtons count]; i++)
+        if ([self.goal finishedScoringElement:i] && ((UIButton *)elementButtons[i]).alpha>0.2) {
+            [elementButtons[i] setAlpha:0.2];
+            numElementsLeft--;
+        }
+    if (!numElementsLeft)
+        [randomButton setAlpha:0.2];
 }
 
 - (UIButton*)makeElementButton:(NSString *)title width:(int)btn_width height:(int)btn_height {
@@ -110,21 +133,45 @@
     [subtitleLabel setAdjustsFontSizeToFitWidth:TRUE];
     [button addSubview:subtitleLabel];
 //    [self.buttonAg addSubview:subtitleLabel];
-    
     return button;
 }
 
 -(void)elementButtonPressed:(id)sender {
     NSLog(@"elementButtonPressed from %@", sender);
+    // "Gray out" this button
+//    [sender setAlpha:0.2];
     [self performSegueWithIdentifier:@"segueToElementDetail" sender:sender];
 }
 
 -(void)randomButtonPressed:(id)sender {
     NSLog(@"randomButtonPressed from %@", sender);
     
+    // If nothing is left, function as if all were still there
+    int randMax = numElementsLeft ? numElementsLeft : [elements count];
+
     // Simulate a press from a random other button
-    int rand = arc4random() % [elements count];
-    [self performSegueWithIdentifier:@"segueToElementDetail" sender:elementButtons[rand]];
+    int rand = arc4random() % randMax;
+    NSLog(@"Selected rand %d from %d", rand, randMax);
+    
+    // Can't dive right into array, if not all are left
+    UIButton *senderBtn = nil;
+    for (UIButton *elemButton in elementButtons) {
+        NSLog(@"Alpha for button %@ is %f", elemButton.titleLabel.text, elemButton.alpha);
+        if (elemButton.alpha>0.2) {
+            if (rand==0) {
+                NSLog(@"Selecting button %@", elemButton.titleLabel.text);
+                senderBtn = elemButton;
+                break;
+            }
+            else {
+                rand--;
+                NSLog(@"Not selecting button %@, count down to %d", elemButton.titleLabel.text, rand);
+            }
+        }
+    }
+    NSLog(@"Got button %@", senderBtn.titleLabel.text);
+
+    [self performSegueWithIdentifier:@"segueToElementDetail" sender:senderBtn];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -135,14 +182,9 @@
 
         // Retrieve the corresponding element
         int tag = ((UIButton*)sender).tag;
-//        NSString *element = elements[tag];
-//        NSLog(@"Got element %@ for button id %d", element, tag);
-
-        // Pass in relevant data items (this could be done in a cleaner fashion)
-//        destination.elementName = element;
-//        destination.elementHeaderText = [PAApplicationState instance].elements[tag][1];
-//        destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
         destination.goal = self.goal;
+        
+        // Pass the path to the destination and store it locally.
         destination.elementPath = tag;
     }
 }

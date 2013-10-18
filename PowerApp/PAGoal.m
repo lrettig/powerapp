@@ -43,4 +43,11 @@
     return @"Looking good!";
 }
 
+-(BOOL) finishedScoringElement:(int)elementNo {
+    for (NSArray *scorePair in self.scores[elementNo])
+        if ([scorePair[0] integerValue]<0)
+            return FALSE;
+    return TRUE;
+}
+
 @end

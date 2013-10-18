@@ -15,5 +15,6 @@
 
 +(PAGoal *) createWithName:(NSString *)name;
 -(NSString *) statusText;
+-(BOOL) finishedScoringElement:(int)elementNo;
 
 @end

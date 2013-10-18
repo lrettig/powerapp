@@ -12,6 +12,8 @@
 @interface PAGoalViewController : UIViewController {
     NSArray *elements;
     NSArray *elementButtons;
+    int numElementsLeft;
+    UIButton *randomButton;
 }
 @property (strong, nonatomic) IBOutlet UIView *elementsView;
 @property (strong, nonatomic) IBOutlet UILabel *labelGoalName;
