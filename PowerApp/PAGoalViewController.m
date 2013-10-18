@@ -3,11 +3,12 @@
 //  PowerApp
 //
 //  Created by Lane Rettig on 10/16/13.
-//  Copyright (c) 2013 Wharton. All rights reserved.
+//  Copyright (c) 2013 Lane Rettig. All rights reserved.
 //
 
 #import "PAGoalViewController.h"
 #import "PAElementDetailViewController.h"
+#import "PAApplicationState.h"
 
 @interface PAGoalViewController ()
 
@@ -27,21 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    elements = @[ @"Agency",
-                  @"Allocentrism",
-                  @"Coalitions",
-                  @"Ethos",
-                  @"Exchange",
-                  @"Intentionality",
-                  @"Logos",
-                  @"Might",
-                  @"Networks",
-                  @"Pathos",
-                  @"Situational Awareness",
-                  @"Teambuilding",
-                  ];
+
+    // Load the list of elements from the master
+    NSMutableArray *elementsTemp = [NSMutableArray array];
+    for (NSArray *elemPair in [PAApplicationState instance].elements) {
+        [elementsTemp addObject:elemPair[0]];
+    }
+    elements = elementsTemp;
 
     int num_rows = 5;
     int num_cols = 3;
@@ -82,7 +75,7 @@
     [randomButton setTitle:@"Random" forState:UIControlStateNormal];
     [randomButton.titleLabel setFont:[UIFont systemFontOfSize:30]];
     [randomButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [[randomButton layer] setBorderWidth:1.0f];
+    [[randomButton layer] setBorderWidth:0.5f];
     [[randomButton layer] setBorderColor:[UIColor blueColor].CGColor];
     [randomButton setFrame:CGRectMake(x_start+col*(x_spacing+btn_width),
                                       y_start+row*(y_spacing+btn_height),
@@ -102,7 +95,7 @@
 //    [button setBackgroundColor:[UIColor redColor]];
     [button.titleLabel setFont:[UIFont systemFontOfSize:30]];
     [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [[button layer] setBorderWidth:1.0f];
+    [[button layer] setBorderWidth:0.5f];
     [[button layer] setBorderColor:[UIColor blueColor].CGColor];
 
     UILabel *subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, btn_height-17, btn_width, 12)];
@@ -135,8 +128,8 @@
     
     // Pass in relevant data items (this could be done in a cleaner fashion)
     destination.elementName = element;
-    destination.elementHeaderText = @"Some cool text here";
-    destination.elementSubElements = @[@"Leading others", @"Dancing all night", @"Finding new possibilities", @"Singing in the rain"];
+    destination.elementHeaderText = [PAApplicationState instance].elements[tag][1];
+    destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
 }
 
 - (void)didReceiveMemoryWarning

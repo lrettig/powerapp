@@ -175,15 +175,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="What ELEMENT means:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="278" translatesAutoresizingMaskIntoConstraints="NO" id="3eB-Nk-TG5" userLabel="labelElementMeans">
-                                <rect key="frame" x="21" y="189" width="278" height="26"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kmL-e9-xIW" userLabel="tableElementBreakdown">
-                                <rect key="frame" x="20" y="223" width="280" height="325"/>
+                                <rect key="frame" x="0.0" y="189" width="320" height="379"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -193,7 +186,6 @@
                     <navigationItem key="navigationItem" id="HF4-PB-uRE"/>
                     <connections>
                         <outlet property="labelElementDetails" destination="j6y-c2-a69" id="5w3-39-Cxn"/>
-                        <outlet property="labelElementMeans" destination="3eB-Nk-TG5" id="CXJ-TU-SDM"/>
                         <outlet property="tableElementBreakdown" destination="kmL-e9-xIW" id="Tjj-zt-a5q"/>
                         <outlet property="view" destination="ETc-pU-IB6" id="LZZ-re-6Pv"/>
                     </connections>

@@ -25,6 +25,9 @@
 		D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF49C180F9FF500935041 /* PAGoalViewController.m */; };
 		D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A11810982F00935041 /* PAElementDetailViewController.m */; };
 		D87BF4A41810A68600935041 /* SubElementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BF4A31810A68600935041 /* SubElementCell.xib */; };
+		D87BF4A71810B06400935041 /* PAApplicationState.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A61810B06400935041 /* PAApplicationState.m */; };
+		D87BF4AA1810B12900935041 /* PATask.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A91810B12900935041 /* PATask.m */; };
+		D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AC1810B20C00935041 /* PAConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,12 @@
 		D87BF4A01810982F00935041 /* PAElementDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAElementDetailViewController.h; sourceTree = "<group>"; };
 		D87BF4A11810982F00935041 /* PAElementDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAElementDetailViewController.m; sourceTree = "<group>"; };
 		D87BF4A31810A68600935041 /* SubElementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubElementCell.xib; sourceTree = "<group>"; };
+		D87BF4A51810B06400935041 /* PAApplicationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAApplicationState.h; sourceTree = "<group>"; };
+		D87BF4A61810B06400935041 /* PAApplicationState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAApplicationState.m; sourceTree = "<group>"; };
+		D87BF4A81810B12900935041 /* PATask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PATask.h; sourceTree = "<group>"; };
+		D87BF4A91810B12900935041 /* PATask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PATask.m; sourceTree = "<group>"; };
+		D87BF4AB1810B20C00935041 /* PAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAConstants.h; sourceTree = "<group>"; };
+		D87BF4AC1810B20C00935041 /* PAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,12 @@
 			children = (
 				D87BF472180F5DFA00935041 /* PAAppDelegate.h */,
 				D87BF473180F5DFA00935041 /* PAAppDelegate.m */,
+				D87BF4A81810B12900935041 /* PATask.h */,
+				D87BF4A91810B12900935041 /* PATask.m */,
+				D87BF4AB1810B20C00935041 /* PAConstants.h */,
+				D87BF4AC1810B20C00935041 /* PAConstants.m */,
+				D87BF4A51810B06400935041 /* PAApplicationState.h */,
+				D87BF4A61810B06400935041 /* PAApplicationState.m */,
 				D87BF475180F5DFA00935041 /* Main.storyboard */,
 				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
 				D87BF49C180F9FF500935041 /* PAGoalViewController.m */,
@@ -216,7 +231,7 @@
 			attributes = {
 				CLASSPREFIX = PA;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = Wharton;
+				ORGANIZATIONNAME = "Lane Rettig";
 				TargetAttributes = {
 					D87BF483180F5DFA00935041 = {
 						TestTargetID = D87BF45F180F5DFA00935041;
@@ -269,10 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */,
+				D87BF4A71810B06400935041 /* PAApplicationState.m in Sources */,
 				D87BF470180F5DFA00935041 /* main.m in Sources */,
 				D87BF47A180F5DFA00935041 /* PAFirstViewController.m in Sources */,
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
 				D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */,
+				D87BF4AA1810B12900935041 /* PATask.m in Sources */,
 				D87BF47D180F5DFA00935041 /* PASecondViewController.m in Sources */,
 				D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */,
 			);
