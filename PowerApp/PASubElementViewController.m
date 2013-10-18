@@ -74,8 +74,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)sliderRating:(id)sender {
+- (IBAction)sliderRatingDidChange:(id)sender {
+    NSLog(@"New slider value: %f", ((UISlider *)sender).value);
 }
+
 
 #pragma mark - UITextView delegate
 

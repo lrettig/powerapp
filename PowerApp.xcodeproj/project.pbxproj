@@ -29,6 +29,7 @@
 		D87BF4AA1810B12900935041 /* PATask.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4A91810B12900935041 /* PATask.m */; };
 		D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AC1810B20C00935041 /* PAConstants.m */; };
 		D87BF4B01811A71400935041 /* PASubElementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AF1811A71400935041 /* PASubElementViewController.m */; };
+		D8D9C2841811C40200EE573C /* PAGoalStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D9C2831811C40200EE573C /* PAGoalStatusViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		D87BF4AC1810B20C00935041 /* PAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAConstants.m; sourceTree = "<group>"; };
 		D87BF4AE1811A71400935041 /* PASubElementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PASubElementViewController.h; sourceTree = "<group>"; };
 		D87BF4AF1811A71400935041 /* PASubElementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASubElementViewController.m; sourceTree = "<group>"; };
+		D8D9C2821811C40200EE573C /* PAGoalStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAGoalStatusViewController.h; sourceTree = "<group>"; };
+		D8D9C2831811C40200EE573C /* PAGoalStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAGoalStatusViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				D87BF4AF1811A71400935041 /* PASubElementViewController.m */,
 				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
 				D87BF49C180F9FF500935041 /* PAGoalViewController.m */,
+				D8D9C2821811C40200EE573C /* PAGoalStatusViewController.h */,
+				D8D9C2831811C40200EE573C /* PAGoalStatusViewController.m */,
 				D87BF4A01810982F00935041 /* PAElementDetailViewController.h */,
 				D87BF4A11810982F00935041 /* PAElementDetailViewController.m */,
 				D87BF478180F5DFA00935041 /* PAFirstViewController.h */,
@@ -297,6 +302,7 @@
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
 				D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */,
 				D87BF4AA1810B12900935041 /* PATask.m in Sources */,
+				D8D9C2841811C40200EE573C /* PAGoalStatusViewController.m in Sources */,
 				D87BF47D180F5DFA00935041 /* PASecondViewController.m in Sources */,
 				D87BF49D180F9FF500935041 /* PAGoalViewController.m in Sources */,
 			);
@@ -507,6 +513,7 @@
 				D87BF497180F5DFA00935041 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D87BF498180F5DFA00935041 /* Build configuration list for PBXNativeTarget "PowerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +522,7 @@
 				D87BF49A180F5DFA00935041 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
