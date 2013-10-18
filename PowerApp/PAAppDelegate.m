@@ -7,11 +7,15 @@
 //
 
 #import "PAAppDelegate.h"
+#import "PAApplicationState.h"
 
 @implementation PAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize app state
+    [[PAApplicationState instance] primeGoals];
+
     // Override point for customization after application launch.
     return YES;
 }

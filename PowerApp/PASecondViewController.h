@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PASecondViewController : UIViewController
+@interface PASecondViewController : UIViewController {
+    NSArray *goalButtons;
+}
+@property (strong, nonatomic) IBOutlet UIView *viewCurrentGoals;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "PAFirstViewController.h"
-#import "PAGoalViewController.h"
+//#import "PAGoalViewController.h"
 
 @interface PAFirstViewController ()
 
@@ -25,24 +25,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"segueToGoal"]) {
-        PAGoalViewController *destination = [segue destinationViewController];
-        NSLog(@"prepareForSegue to %@", destination);
-
-        // Retrieve the corresponding element
-        int tag = ((UIButton*)sender).tag;
-        NSString *element = elements[tag];
-        NSLog(@"Got element %@ for button id %d", element, tag);
-        
-        // Pass in relevant data items (this could be done in a cleaner fashion)
-        destination.elementName = element;
-        destination.elementHeaderText = [PAApplicationState instance].elements[tag][1];
-        destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
-    }
 }
 
 - (IBAction)back:(UIStoryboardSegue *)segue {

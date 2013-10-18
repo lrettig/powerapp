@@ -30,6 +30,7 @@
 		D87BF4AD1810B20C00935041 /* PAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AC1810B20C00935041 /* PAConstants.m */; };
 		D87BF4B01811A71400935041 /* PASubElementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BF4AF1811A71400935041 /* PASubElementViewController.m */; };
 		D8D9C2841811C40200EE573C /* PAGoalStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D9C2831811C40200EE573C /* PAGoalStatusViewController.m */; };
+		D8D9C2871811DF4A00EE573C /* PANewGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D9C2861811DF4A00EE573C /* PANewGoalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		D87BF4AF1811A71400935041 /* PASubElementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PASubElementViewController.m; sourceTree = "<group>"; };
 		D8D9C2821811C40200EE573C /* PAGoalStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAGoalStatusViewController.h; sourceTree = "<group>"; };
 		D8D9C2831811C40200EE573C /* PAGoalStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAGoalStatusViewController.m; sourceTree = "<group>"; };
+		D8D9C2851811DF4A00EE573C /* PANewGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PANewGoalViewController.h; sourceTree = "<group>"; };
+		D8D9C2861811DF4A00EE573C /* PANewGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PANewGoalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				D87BF4A51810B06400935041 /* PAApplicationState.h */,
 				D87BF4A61810B06400935041 /* PAApplicationState.m */,
 				D87BF475180F5DFA00935041 /* Main.storyboard */,
+				D8D9C2851811DF4A00EE573C /* PANewGoalViewController.h */,
+				D8D9C2861811DF4A00EE573C /* PANewGoalViewController.m */,
 				D87BF4AE1811A71400935041 /* PASubElementViewController.h */,
 				D87BF4AF1811A71400935041 /* PASubElementViewController.m */,
 				D87BF49B180F9FF500935041 /* PAGoalViewController.h */,
@@ -299,6 +304,7 @@
 				D87BF470180F5DFA00935041 /* main.m in Sources */,
 				D87BF4B01811A71400935041 /* PASubElementViewController.m in Sources */,
 				D87BF47A180F5DFA00935041 /* PAFirstViewController.m in Sources */,
+				D8D9C2871811DF4A00EE573C /* PANewGoalViewController.m in Sources */,
 				D87BF474180F5DFA00935041 /* PAAppDelegate.m in Sources */,
 				D87BF4A21810982F00935041 /* PAElementDetailViewController.m in Sources */,
 				D87BF4AA1810B12900935041 /* PAGoal.m in Sources */,

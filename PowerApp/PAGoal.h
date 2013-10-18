@@ -14,5 +14,6 @@
 @property NSMutableArray *score;
 
 +(PAGoal *) createWithName:(NSString *)name;
+-(NSString *) statusText;
 
 @end

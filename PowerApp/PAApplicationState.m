@@ -7,6 +7,7 @@
 //
 
 #import "PAApplicationState.h"
+#import "PAGoal.h"
 
 @implementation PAApplicationState
 
@@ -16,7 +17,7 @@ static PAApplicationState *instance;
 {
 }
 
-+(PAApplicationState *)instance{
++(PAApplicationState *)instance {
     return instance;
 }
 
@@ -94,10 +95,23 @@ static PAApplicationState *instance;
     return self;
 }
 
+
+// Prime the data model with a few example goals
+// Note that this MUST be done apart from the init method above since the goal
+// data model depends upon the elements array which is constructed above.
+// So we initialize these separately, after the state instance has been
+// instantiated.
+-(void)primeGoals {
+    PAGoal *goal1 = [PAGoal createWithName:@"Build an incredible company"];
+    PAGoal *goal2 = [PAGoal createWithName:@"Be an incredible MBA student"];
+    PAGoal *goal3 = [PAGoal createWithName:@"Help my sister be a better student"];
+    self.goals = [NSMutableArray arrayWithObjects:goal1, goal2, goal3, nil];
+}
+
 //
 // this code is called before tha appDelegate is called
 //
-+(void)load{
++(void)load {
     instance = [[PAApplicationState alloc] init];
 }
 

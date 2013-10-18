@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.labelGoalName.text = self.goal.name;
 
     // Load the list of elements from the master
     NSMutableArray *elementsTemp = [NSMutableArray array];
@@ -83,7 +85,6 @@
                                       bottom_btn_width,
                                       btn_height)];
     [self.elementsView addSubview:randomButton];
-//    [elementButtonsTemp addObject:randomButton];
     
     // Save the list of buttons
     elementButtons = [NSArray arrayWithArray:elementButtonsTemp];
