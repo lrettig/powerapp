@@ -16,7 +16,7 @@
     goal.name = name;
     
     // Initialize the scores
-    NSMutableArray *scores = [NSMutableArray array];
+    NSMutableArray *scoresArray = [NSMutableArray array];
     
     // Iterate through the elements and subelements to initialize the array
     for (NSArray *element in [PAApplicationState instance].elements) {
@@ -24,13 +24,18 @@
         NSMutableArray *scoreRow = [NSMutableArray arrayWithCapacity:[subElements count]];
         
         // Is there an easier way to do this in Obj C?
-        for (int i=0; i<[scoreRow count];i++)
-            scoreRow[i] = [NSNumber numberWithFloat:-1.0];
-        
-        [scores addObject:scoreRow];
+        for (int i=0; i<[subElements count];i++)
+            // For each subelement we store a pair, consisting of
+            // score (float) and comment (text).
+            scoreRow[i] = @[
+                            [NSNumber numberWithFloat:-1.0],
+                            @""];
+
+        [scoresArray addObject:scoreRow];
     }
-    NSLog(@"Initialize new PAGoal object with scores: %@", scores);
-    
+    NSLog(@"Initialize new PAGoal object with scores: %@", scoresArray);
+    goal.scores = scoresArray;
+
     return goal;
 }
 

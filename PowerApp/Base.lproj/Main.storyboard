@@ -331,6 +331,7 @@
                     <navigationItem key="navigationItem" id="u3V-tR-1Ps"/>
                     <connections>
                         <outlet property="labelHeader" destination="Ldg-0S-m57" id="I4g-6Q-mYb"/>
+                        <outlet property="sliderScore" destination="H2r-JI-4lJ" id="2w8-OI-rVe"/>
                         <outlet property="textviewNotes" destination="756-vu-bvj" id="Iyx-Cr-zgE"/>
                     </connections>
                 </viewController>

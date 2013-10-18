@@ -48,6 +48,11 @@
     self.labelElementMeans.text = [NSString stringWithFormat:@"What %@ means:", elementName];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    // Reload data when coming back from modal child
+    [self.tableElementBreakdown reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,9 +81,22 @@
 
     // Basic set up of the cell
     NSArray *elementSubArray = [PAApplicationState instance].elements[self.elementPath][2][indexPath.row];
+    NSLog(@"Creating cell for %@", elementSubArray[0]);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [((UILabel *)[cell viewWithTag:1]) setText:elementSubArray[0]];
     [((UILabel *)[cell viewWithTag:2]) setText:elementSubArray[1]];
+
+    NSLog(@"Score data for subelement: %@", self.goal.scores[self.elementPath][indexPath.row]);
+
+    NSNumber *subelementScore = self.goal.scores[self.elementPath][indexPath.row][0];
+    if ([subelementScore integerValue]>=0) {
+        [((UILabel *)[cell viewWithTag:4]) setText:[NSString stringWithFormat:@"%.1f", [subelementScore floatValue]*10]];
+        [((UILabel *)[cell viewWithTag:4]) setNumberOfLines:0];
+        [((UILabel *)[cell viewWithTag:4]) setAdjustsFontSizeToFitWidth:TRUE];
+        [((UILabel *)[cell viewWithTag:4]) setHidden:FALSE];
+    }
+    else
+        [((UILabel *)[cell viewWithTag:4]) setHidden:TRUE];
 
     cell.clipsToBounds = YES;
     return cell;

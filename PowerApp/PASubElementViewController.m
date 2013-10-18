@@ -31,15 +31,33 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Set values from data
+    NSArray *subelementPair = self.goal.scores[self.elementPath][self.subelementPath];
+    NSLog(@"Subelement data on viewDidLoad: %@", subelementPair);
+    NSNumber *subelementScore = (NSNumber *)subelementPair[0];
+    NSString *subelementText = (NSString *)subelementPair[1];
+
+    // Score
+    if ([subelementScore integerValue] >=0)
+        [self.sliderScore setValue:[subelementScore floatValue] animated:NO];
+    if (subelementText.length) {
+        self.textviewNotes.text = subelementText;
+        self.textviewNotes.textColor = [UIColor blackColor];
+    }
+    else {
+        self.textviewNotes.text = @PLACEHOLDER_TEXT;
+        self.textviewNotes.textColor = [UIColor lightGrayColor];
+    }
+
     self.textviewNotes.delegate = self;
-    self.textviewNotes.text = @PLACEHOLDER_TEXT;
     self.textviewNotes.textColor = [UIColor lightGrayColor];
     self.textviewNotes.layer.borderWidth = 1.0f;
     self.textviewNotes.layer.borderColor = [[UIColor blueColor] CGColor];
-    
+
     elementName = [PAApplicationState instance].elements[self.elementPath][0];
     subelementName = [PAApplicationState instance].elements[self.elementPath][2][self.subelementPath][0];
-    
+
     self.title = elementName;
     NSLog(@"Element name: %@", elementName);
     NSLog(@"Subelement name: %@", subelementName);
@@ -68,8 +86,12 @@
     // probably involve a proper delegate protocol to receive this data.
     // In this case we just pass the goal data object up the stack of VCs
     // and modify it here at the bottom level.
-    
-    
+    NSString *valueToStore = [self.textviewNotes.text isEqualToString:@PLACEHOLDER_TEXT] ? @"" : self.textviewNotes.text;
+    self.goal.scores[self.elementPath][self.subelementPath] = @[
+                                                                [NSNumber numberWithFloat:self.sliderScore.value],
+                                                                valueToStore];
+    NSLog(@"Subelement data on viewWillDisappear: %@", self.goal.scores[self.elementPath][self.subelementPath]);
+
     // unregister for keyboard notifications while not visible.
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillShowNotification

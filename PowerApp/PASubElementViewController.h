@@ -17,6 +17,7 @@
 
 //@property (strong, nonatomic) NSString *subelementName;
 //@property (strong, nonatomic) NSString *elementName;
+@property (strong, nonatomic) IBOutlet UISlider *sliderScore;
 @property int elementPath;
 @property int subelementPath;
 @property (strong, nonatomic) IBOutlet UILabel *labelHeader;

@@ -10,8 +10,8 @@
 
 @interface PAGoal : NSObject
 
-@property NSString *name;
-@property NSMutableArray *score;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSMutableArray *scores;
 
 +(PAGoal *) createWithName:(NSString *)name;
 -(NSString *) statusText;
