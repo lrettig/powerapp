@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PAGoal.h"
 
 @interface PAElementDetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
-    NSString *subelementToSend;
+//    NSString *subelementToSend;
+    int subelementPathToSend;
+    NSString *elementName;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *labelElementDetails;
 @property (strong, nonatomic) IBOutlet UILabel *labelElementMeans;
 @property (strong, nonatomic) IBOutlet UITableView *tableElementBreakdown;
-@property (strong, nonatomic) NSString *elementHeaderText;
-@property (strong, nonatomic) NSString *elementName;
-@property (strong, nonatomic) NSArray *elementSubElements;
+//@property (strong, nonatomic) NSString *elementHeaderText;
+//@property (strong, nonatomic) NSString *elementName;
+//@property (strong, nonatomic) NSArray *elementSubElements;
+@property (strong, nonatomic) PAGoal *goal;
+@property int elementPath;
 
 @end

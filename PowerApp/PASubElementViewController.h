@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "PAElementDetailViewController.h"
+#import "PAGoal.h"
 
-@interface PASubElementViewController : UIViewController<UITextViewDelegate>
+@interface PASubElementViewController : UIViewController<UITextViewDelegate> {
+    NSString *elementName;
+    NSString *subelementName;
+}
 
-@property (strong, nonatomic) NSString *subelementName;
-@property (strong, nonatomic) NSString *elementName;
+//@property (strong, nonatomic) NSString *subelementName;
+//@property (strong, nonatomic) NSString *elementName;
+@property int elementPath;
+@property int subelementPath;
 @property (strong, nonatomic) IBOutlet UILabel *labelHeader;
 @property (strong, nonatomic) IBOutlet UITextView *textviewNotes;
+@property (strong, nonatomic) PAGoal *goal;
+//@property (strong, nonatomic) PAElementDetailViewController *parentVC;
 
 @end

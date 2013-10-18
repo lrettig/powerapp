@@ -8,6 +8,7 @@
 
 #import "PAElementDetailViewController.h"
 #import "PASubElementViewController.h"
+#import "PAApplicationState.h"
 
 @interface PAElementDetailViewController ()
 
@@ -28,12 +29,23 @@
 {
     [super viewDidLoad];
     
+    // Get the element data
+    //        NSString *element = elements[tag];
+    //        NSLog(@"Got element %@ for button id %d", element, tag);
+    
+    // Pass in relevant data items (this could be done in a cleaner fashion)
+    //        destination.elementName = element;
+    //        destination.elementHeaderText = [PAApplicationState instance].elements[tag][1];
+    //        destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
+    elementName = [PAApplicationState instance].elements[self.elementPath][0];
+    self.title = elementName;
+
     UINib *customCellNib = [UINib nibWithNibName:@"SubElementCell" bundle:nil];
     [self.tableElementBreakdown registerNib:customCellNib forCellReuseIdentifier:@"SubElementCell"];
     self.tableElementBreakdown.delegate = self;
     self.tableElementBreakdown.dataSource = self;
-    self.labelElementDetails.text = self.elementHeaderText;
-    self.labelElementMeans.text = [NSString stringWithFormat:@"What %@ means:", self.elementName];
+    self.labelElementDetails.text = [PAApplicationState instance].elements[self.elementPath][1];
+    self.labelElementMeans.text = [NSString stringWithFormat:@"What %@ means:", elementName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.elementSubElements count];
+    return [[PAApplicationState instance].elements[self.elementPath][2] count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,11 +75,11 @@
     static NSString *CellIdentifier = @"SubElementCell";
 
     // Basic set up of the cell
-    NSArray *elementSubArray = self.elementSubElements[indexPath.row];
+    NSArray *elementSubArray = [PAApplicationState instance].elements[self.elementPath][2][indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [((UILabel *)[cell viewWithTag:1]) setText:elementSubArray[0]];
     [((UILabel *)[cell viewWithTag:2]) setText:elementSubArray[1]];
-    
+
     cell.clipsToBounds = YES;
     return cell;
 }
@@ -76,7 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    subelementToSend = self.elementSubElements[indexPath.row][0];
+//    subelementToSend = [PAApplicationState instance].elements[self.elementPath][2][indexPath.row][0];
+    subelementPathToSend = indexPath.row;
     [self performSegueWithIdentifier:@"segueToSubelement" sender:self];
 }
 
@@ -88,8 +101,11 @@
     NSLog(@"prepareForSegue to %@", destination);
 
     // Pass in relevant data items (this could be done in a cleaner fashion)
-    destination.elementName = self.elementName;
-    destination.subelementName = subelementToSend;
+//    destination.elementName = elementName;
+//    destination.subelementName = subelementToSend;
+    destination.elementPath = self.elementPath;
+    destination.subelementPath = subelementPathToSend;
+    destination.goal = self.goal;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "PASubElementViewController.h"
+#import "PAApplicationState.h"
 
 #define kOFFSET_FOR_KEYBOARD 170.0
 #define PLACEHOLDER_TEXT "Enter personal notes here"
@@ -36,11 +37,14 @@
     self.textviewNotes.layer.borderWidth = 1.0f;
     self.textviewNotes.layer.borderColor = [[UIColor blueColor] CGColor];
     
-    self.title = self.elementName;
-    NSLog(@"Element name: %@", self.elementName);
-    NSLog(@"Subelement name: %@", self.subelementName);
-    self.labelHeader.text = [NSString stringWithFormat:@"%@ > %@", self.elementName, self.subelementName];
-
+    elementName = [PAApplicationState instance].elements[self.elementPath][0];
+    subelementName = [PAApplicationState instance].elements[self.elementPath][2][self.subelementPath][0];
+    
+    self.title = elementName;
+    NSLog(@"Element name: %@", elementName);
+    NSLog(@"Subelement name: %@", subelementName);
+//    self.labelHeader.text = [NSString stringWithFormat:@"%@ > %@", self.elementName, self.subelementName];
+    self.labelHeader.text = subelementName;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,6 +63,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    // send data back to parent
+    // There is DEFINITELY a cleaner, more proper way to do this, which would
+    // probably involve a proper delegate protocol to receive this data.
+    // In this case we just pass the goal data object up the stack of VCs
+    // and modify it here at the bottom level.
+    
+    
     // unregister for keyboard notifications while not visible.
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillShowNotification

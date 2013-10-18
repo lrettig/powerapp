@@ -21,12 +21,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     // Display the current list of goals
+    // Do this here rather than in viewDidLoad so we can refresh the list of
+    // goals after a modal sub VC goes away.
     [self addGoals];
 }
 
 - (void)addGoals {
+    // Clear all existing goals
+    [[self.viewCurrentGoals subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
     // Get the list of current goals
     NSArray *goals = [PAApplicationState instance].goals;
