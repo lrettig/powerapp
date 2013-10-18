@@ -76,7 +76,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    subelementToSend = self.elementSubElements[indexPath.row];
+    subelementToSend = self.elementSubElements[indexPath.row][0];
     [self performSegueWithIdentifier:@"segueToSubelement" sender:self];
 }
 

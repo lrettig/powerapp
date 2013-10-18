@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PASubElementViewController : UIViewController
+@interface PASubElementViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) NSString *subelementName;
 @property (strong, nonatomic) NSString *elementName;
