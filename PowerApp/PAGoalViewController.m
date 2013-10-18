@@ -30,7 +30,11 @@
     [super viewDidLoad];
     
     self.labelGoalName.text = self.goal.name;
-//    seguePath = -1;
+    NSString *statusStr = [self.goal statusText];
+    [self.btnGoalStatus setTitle:[NSString stringWithFormat:@"Status: %@%@",
+                                  statusStr,
+                                  [statusStr isEqualToString:@"Finish entering scores."] ? @"" : @" Click for details."]
+                        forState:UIControlStateNormal];
 
     // Load the list of elements from the master
     NSMutableArray *elementsTemp = [NSMutableArray array];
@@ -104,11 +108,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // Mark as "done" any elements that we've finished scoring.
-    for (int i=0; i<[elementButtons count]; i++)
-        if ([self.goal finishedScoringElement:i] && ((UIButton *)elementButtons[i]).alpha>0.2) {
+    for (int i=0; i<[elementButtons count]; i++) {
+        // Floating point arithmetic is weird, cannot compare to 0.2 so compare to 0.3
+        if ([self.goal finishedScoringElement:i] && ((UIButton *)elementButtons[i]).alpha>0.3) {
             [elementButtons[i] setAlpha:0.2];
             numElementsLeft--;
         }
+    }
     if (!numElementsLeft)
         [randomButton setAlpha:0.2];
 }

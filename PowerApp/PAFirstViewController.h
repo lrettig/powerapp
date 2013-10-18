@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PAFirstViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *viewTasks;
 
 @end
