@@ -208,7 +208,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnGoalStatus" destination="eGS-3N-LuW" id="Y6k-ba-98i"/>
                         <outlet property="elementsView" destination="vcX-MU-hhM" id="FYX-F4-ig3"/>
+                        <outlet property="labelGoalName" destination="6P9-xI-qm1" id="Stj-nu-lhU"/>
                         <segue destination="GSc-qz-EAg" kind="push" identifier="segueToElementDetail" id="YT2-0C-W4I"/>
                     </connections>
                 </viewController>
@@ -371,7 +373,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sAd-2y-tF8" kind="modal" id="9vP-Dm-QFd"/>
+                                    <segue destination="sAd-2y-tF8" kind="modal" identifier="segueToGoal" id="9vP-Dm-QFd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MHT-g1-tsj">

@@ -49,7 +49,7 @@
     
     // Add buttons for each element
     int i = 0;
-    NSMutableArray *elementButtonsTemp;
+    NSMutableArray *elementButtonsTemp = [NSMutableArray array];
     for (; i<[elements count]; i++) {
         UIButton *button = [self makeElementButton:elements[i] width:btn_width height:btn_height];
         
@@ -72,6 +72,7 @@
     int col = i % num_cols;
     UIButton *randomButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     randomButton.tag = i;
+    [randomButton addTarget:self action:@selector(randomButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [randomButton setTitle:@"Random" forState:UIControlStateNormal];
     [randomButton.titleLabel setFont:[UIFont systemFontOfSize:30]];
     [randomButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
@@ -82,10 +83,10 @@
                                       bottom_btn_width,
                                       btn_height)];
     [self.elementsView addSubview:randomButton];
-    [elementButtonsTemp addObject:randomButton];
+//    [elementButtonsTemp addObject:randomButton];
     
     // Save the list of buttons
-    elementButtons = elementButtonsTemp;
+    elementButtons = [NSArray arrayWithArray:elementButtonsTemp];
 }
 
 - (UIButton*)makeElementButton:(NSString *)title width:(int)btn_width height:(int)btn_height {
@@ -113,15 +114,24 @@
 }
 
 -(void)elementButtonPressed:(id)sender {
+    NSLog(@"elementButtonPressed from %@", sender);
     [self performSegueWithIdentifier:@"segueToElementDetail" sender:sender];
+}
+
+-(void)randomButtonPressed:(id)sender {
+    NSLog(@"randomButtonPressed from %@", sender);
+    
+    // Simulate a press from a random other button
+    int rand = arc4random() % [elements count];
+    [self performSegueWithIdentifier:@"segueToElementDetail" sender:elementButtons[rand]];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PAElementDetailViewController *destination = [segue destinationViewController];
-    NSLog(@"prepareForSegue to %@", destination);
- 
     if ([[segue identifier] isEqualToString:@"segueToElementDetail"]) {
+        PAElementDetailViewController *destination = [segue destinationViewController];
+        NSLog(@"prepareForSegue to %@", destination);
+
         // Retrieve the corresponding element
         int tag = ((UIButton*)sender).tag;
         NSString *element = elements[tag];

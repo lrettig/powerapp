@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Lane Rettig. All rights reserved.
 //
 
-#import "PATask.h"
+#import "PAGoal.h"
 
-@implementation PATask
+@implementation PAGoal
 
-+(PATask *) createWithName:(NSString *)name {
-    PATask *task = [[PATask alloc] init];
-    task.name = name;
++(PAGoal *) createWithName:(NSString *)name {
+    PAGoal *goal = [[PAGoal alloc] init];
+    goal.name = name;
     
     // Initialize the scores
     
     
-    return task;
+    return goal;
 }
 
 @end

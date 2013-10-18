@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PAGoal.h"
 
 @interface PAGoalViewController : UIViewController {
     NSArray *elements;
     NSArray *elementButtons;
 }
 @property (strong, nonatomic) IBOutlet UIView *elementsView;
+@property (strong, nonatomic) IBOutlet UILabel *labelGoalName;
+@property (strong, nonatomic) IBOutlet UIButton *btnGoalStatus;
+@property (strong, nonatomic) PAGoal *goal;
 
 @end

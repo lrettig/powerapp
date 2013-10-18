@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PATask : NSObject
+@interface PAGoal : NSObject
 
 @property NSString *name;
 @property NSMutableArray *score;
+
++(PAGoal *) createWithName:(NSString *)name;
 
 @end
