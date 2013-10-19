@@ -90,4 +90,38 @@
     return sum;
 }
 
+// Return a random task for this goal.
+-(NSArray *) getRandomTask {
+    // Start by looking for unset scores.
+    int i = arc4random() % [self.scores count];
+    while (i<[self.scores count]) {
+        int j = i % [self.scores count];
+        if (![self finishedScoringElement:j]) {
+            NSString *elemName = [PAApplicationState instance].elements[j][0];
+            NSString *taskDescription = [NSString stringWithFormat:@"Enter score for %@ for %@",
+                                         elemName,
+                                         self.name];
+            return @[taskDescription, [NSNumber numberWithInt:j]];
+        }
+        i++;
+    }
+
+    // If all scores are set, find a low score.
+    i = arc4random() % [self.scores count];
+    while (i<[self.scores count]) {
+        int j = i % [self.scores count];
+        if ([self averageForElement:j]<0.33) {
+            NSString *elemName = [PAApplicationState instance].elements[j][0];
+            NSString *taskDescription = [NSString stringWithFormat:@"%@ for %@",
+                                         elemName,
+                                         self.name];
+            return @[taskDescription, [NSNumber numberWithInt:j]];
+        }
+        i++;
+    }
+    
+    // Nothing to do for this task!
+    return @[[NSString stringWithFormat:@"%@ looks good, nothing to do!", self.name], [NSNumber numberWithInt:-1]];
+}
+
 @end

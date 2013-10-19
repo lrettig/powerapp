@@ -39,6 +39,12 @@
     //        destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
     elementName = [PAApplicationState instance].elements[self.elementPath][0];
     self.title = elementName;
+    
+    // Add a back button if relevant
+    if ([self.navigationController.topViewController isKindOfClass:[self class]]) {
+        UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonPressed)];
+        self.navigationItem.leftBarButtonItem = newBackButton;
+    }
 
     UINib *customCellNib = [UINib nibWithNibName:@"SubElementCell" bundle:nil];
     [self.tableElementBreakdown registerNib:customCellNib forCellReuseIdentifier:@"SubElementCell"];
@@ -46,6 +52,10 @@
     self.tableElementBreakdown.dataSource = self;
     self.labelElementDetails.text = [PAApplicationState instance].elements[self.elementPath][1];
     self.labelElementMeans.text = [NSString stringWithFormat:@"What %@ means:", elementName];
+}
+
+-(void) backButtonPressed {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

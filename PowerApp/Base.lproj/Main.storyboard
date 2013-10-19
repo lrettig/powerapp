@@ -45,6 +45,7 @@
                     <tabBarItem key="tabBarItem" title="Tasks" image="first" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="viewTasks" destination="Fz0-zv-aDE" id="yfW-eT-ptl"/>
+                        <segue destination="jdd-1T-0XK" kind="modal" identifier="segueToTask" id="yl5-Bs-Mhw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -65,6 +66,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpG-ts-UCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="498"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ryc-eL-LhD">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="jdd-1T-0XK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c54-dw-L7s">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GSc-qz-EAg" kind="relationship" relationship="rootViewController" id="Ztb-A8-HFe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltB-bg-mPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="-197"/>
         </scene>
         <!--Goal Status View Controller - Goal status-->
         <scene sceneID="BeZ-pj-tGP">
@@ -122,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEW-Ox-x8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-197"/>
+            <point key="canvasLocation" x="2040" y="-197"/>
         </scene>
         <!--Goal View Controller-->
         <scene sceneID="KQX-Ma-79v">
@@ -434,4 +450,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ztb-A8-HFe"/>
+    </inferredMetricsTieBreakers>
 </document>

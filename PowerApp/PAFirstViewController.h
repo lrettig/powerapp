@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PAFirstViewController : UIViewController
+@interface PAFirstViewController : UIViewController {
+    NSMutableArray *taskButtons;
+    NSMutableArray *taskPaths;
+}
 @property (strong, nonatomic) IBOutlet UIView *viewTasks;
 
 @end
