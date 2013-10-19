@@ -138,8 +138,8 @@ static PAApplicationState *instance;
 // So we initialize these separately, after the state instance has been
 // instantiated.
 -(void)primeGoals {
-    PAGoal *goal1 = [PAGoal createWithName:@"Build an incredible company"];
-    PAGoal *goal2 = [PAGoal createWithName:@"Be an incredible MBA student"];
+    PAGoal *goal1 = [PAGoal createWithName:@"Start an influential nonprofit"];
+    PAGoal *goal2 = [PAGoal createWithName:@"Be an outstanding MBA student"];
     PAGoal *goal3 = [PAGoal createWithName:@"Help my sister be a better student"];
     self.goals = [NSMutableArray arrayWithObjects:goal1, goal2, goal3, nil];
 }
