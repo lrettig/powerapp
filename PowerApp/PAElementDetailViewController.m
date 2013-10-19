@@ -28,17 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Get the element data
-    //        NSString *element = elements[tag];
-    //        NSLog(@"Got element %@ for button id %d", element, tag);
-    
-    // Pass in relevant data items (this could be done in a cleaner fashion)
-    //        destination.elementName = element;
-    //        destination.elementHeaderText = [PAApplicationState instance].elements[tag][1];
-    //        destination.elementSubElements = [PAApplicationState instance].elements[tag][2];
+
     elementName = [PAApplicationState instance].elements[self.elementPath][0];
     self.title = elementName;
+    self.labelGoalName.text = self.goal.name;
     
     // Add a back button if relevant
     if ([self.navigationController.topViewController isKindOfClass:[self class]]) {
@@ -51,7 +44,6 @@
     self.tableElementBreakdown.delegate = self;
     self.tableElementBreakdown.dataSource = self;
     self.labelElementDetails.text = [PAApplicationState instance].elements[self.elementPath][1];
-    self.labelElementMeans.text = [NSString stringWithFormat:@"What %@ means:", elementName];
 }
 
 -(void) backButtonPressed {

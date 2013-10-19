@@ -216,7 +216,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Text that describes the selected element in detail goes here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j6y-c2-a69" userLabel="labelElementDetails">
-                                <rect key="frame" x="20" y="71" width="280" height="110"/>
+                                <rect key="frame" x="20" y="120" width="280" height="61"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -227,12 +227,20 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Build an incredible company" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-yI-EuY">
+                                <rect key="frame" x="20" y="66" width="280" height="65"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HF4-PB-uRE"/>
                     <connections>
                         <outlet property="labelElementDetails" destination="j6y-c2-a69" id="5w3-39-Cxn"/>
+                        <outlet property="labelGoalName" destination="5nU-yI-EuY" id="jfw-jt-CHn"/>
                         <outlet property="tableElementBreakdown" destination="kmL-e9-xIW" id="Tjj-zt-a5q"/>
                         <outlet property="view" destination="ETc-pU-IB6" id="LZZ-re-6Pv"/>
                         <segue destination="ty0-Uf-qet" kind="push" identifier="segueToSubelement" id="MkB-Df-Ycx"/>
@@ -451,6 +459,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ztb-A8-HFe"/>
+        <segue reference="YT2-0C-W4I"/>
     </inferredMetricsTieBreakers>
 </document>

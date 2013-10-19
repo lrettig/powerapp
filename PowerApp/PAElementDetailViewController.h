@@ -15,8 +15,8 @@
     NSString *elementName;
 }
 
+@property (strong, nonatomic) IBOutlet UILabel *labelGoalName;
 @property (strong, nonatomic) IBOutlet UILabel *labelElementDetails;
-@property (strong, nonatomic) IBOutlet UILabel *labelElementMeans;
 @property (strong, nonatomic) IBOutlet UITableView *tableElementBreakdown;
 //@property (strong, nonatomic) NSString *elementHeaderText;
 //@property (strong, nonatomic) NSString *elementName;

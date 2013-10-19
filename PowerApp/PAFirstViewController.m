@@ -34,7 +34,7 @@
 - (void)addTasks {
     // Clear all existing goals
     [[self.viewTasks subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [taskPaths removeAllObjects];
+    taskPaths = [NSMutableArray array];
 
     // Get the list of current goals
     NSArray *goals = [PAApplicationState instance].goals;
@@ -94,19 +94,8 @@
         NSLog(@"Segue to task from %@", sender);
         UINavigationController *nav = [segue destinationViewController];
         PAElementDetailViewController *destination = (PAElementDetailViewController *)nav.topViewController;
-//        PAElementDetailViewController *destination = [segue destinationViewController];
         destination.goal = [PAApplicationState instance].goals[[taskPaths[((UIButton *)sender).tag][0] integerValue]];
         destination.elementPath = [taskPaths[((UIButton *)sender).tag][1] integerValue];
-//        NSLog(@"prepareForSegue to %@ via %@", destination, nav);
-//        
-//        // Retrieve the corresponding element
-//        int tag = ((UIButton*)sender).tag;
-//        NSArray *goals = [PAApplicationState instance].goals;
-//        PAGoal *goal = goals[tag];
-//        NSLog(@"Got element %@ for button id %d", goal, tag);
-//        
-//        // Pass in relevant data items (this could be done in a cleaner fashion)
-//        destination.goal = goal;
     }
 }
 
