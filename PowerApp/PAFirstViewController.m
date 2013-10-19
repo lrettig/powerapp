@@ -21,15 +21,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self addTasks];
+//    [self addTasks];
 }
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    // Display the current list of goals
-//    // Do this here rather than in viewDidLoad so we can refresh the list of
-//    // goals after a modal sub VC goes away.
-//
-//}
+- (void)viewWillAppear:(BOOL)animated {
+    // Display the current list of goals
+    // Do this here rather than in viewDidLoad so we can refresh the list of
+    // goals after a modal sub VC goes away.
+    [self addTasks];
+}
 
 - (void)addTasks {
     // Clear all existing goals

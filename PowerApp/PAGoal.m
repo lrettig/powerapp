@@ -98,7 +98,7 @@
         int j = i % [self.scores count];
         if (![self finishedScoringElement:j]) {
             NSString *elemName = [PAApplicationState instance].elements[j][0];
-            NSString *taskDescription = [NSString stringWithFormat:@"Enter score for %@ for %@",
+            NSString *taskDescription = [NSString stringWithFormat:@"Enter scores for %@ for %@",
                                          elemName,
                                          self.name];
             return @[taskDescription, [NSNumber numberWithInt:j]];

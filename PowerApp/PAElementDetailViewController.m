@@ -34,7 +34,7 @@
     self.labelGoalName.text = self.goal.name;
     
     // Add a back button if relevant
-    if ([self.navigationController.topViewController isKindOfClass:[self class]]) {
+    if ([self.navigationController.viewControllers[0] isKindOfClass:[self class]]) {
         UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonPressed)];
         self.navigationItem.leftBarButtonItem = newBackButton;
     }

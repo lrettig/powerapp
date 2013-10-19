@@ -17,21 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Good afternoon, Lane!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-ve-WU7">
-                                <rect key="frame" x="16" y="17" width="280" height="42"/>
+                                <rect key="frame" x="16" y="28" width="280" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your tasks for today are:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcC-Y5-dmt">
-                                <rect key="frame" x="20" y="67" width="280" height="19"/>
+                                <rect key="frame" x="20" y="85" width="280" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fz0-zv-aDE" userLabel="viewCurrentGoals">
-                                <rect key="frame" x="20" y="94" width="280" height="409"/>
+                                <rect key="frame" x="20" y="128" width="280" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -215,8 +215,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Text that describes the selected element in detail goes here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j6y-c2-a69" userLabel="labelElementDetails">
-                                <rect key="frame" x="20" y="120" width="280" height="61"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Pick your spots. Work to understand the situation from multiple perspectives." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="j6y-c2-a69" userLabel="labelElementDetails">
+                                <rect key="frame" x="20" y="126" width="280" height="63"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -276,7 +276,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Agency > Create new alternatives" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-0S-m57">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Create alternatives" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-0S-m57">
                                 <rect key="frame" x="20" y="66" width="280" height="77"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
@@ -284,11 +284,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPe-Kd-hue">
-                                <rect key="frame" x="20" y="137" width="280" height="30"/>
+                                <rect key="frame" x="20" y="132" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="More information on this topic">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1IX-AY-Pji" kind="push" id="diK-S0-fuO"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-JI-4lJ">
                                 <rect key="frame" x="18" y="186" width="284" height="34"/>
@@ -334,6 +337,51 @@
             </objects>
             <point key="canvasLocation" x="2467" y="498"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="QUQ-SE-HJq">
+            <objects>
+                <viewController id="1IX-AY-Pji" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Cp-kr-WAX"/>
+                        <viewControllerLayoutGuide type="bottom" id="CQ4-Rw-Gio"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mf8-jq-ox9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Create alternatives" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Cgp-sr-lhY">
+                                <rect key="frame" x="20" y="75" width="280" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="janette.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z40-qf-v8T">
+                                <rect key="frame" x="20" y="137" width="139" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember Janette Sadik-Kahn. She had a vision to change New York City. When people" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="133" translatesAutoresizingMaskIntoConstraints="NO" id="YGX-HK-Bge">
+                                <rect key="frame" x="167" y="137" width="133" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-AN-A9U">
+                                <rect key="frame" x="20" y="271" width="280" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">told her it was impossible to turn a parking lot into an outdoor garden, she didn't listen. She didn't go through the official channels to seek permission. She found another way: paint some lines and install some benches overnight and see what happens. By the time the city had noticed, it was too late. Her strategy? Ask forgiveness instead of permission! If you are willing to try new things, you will be able to do more.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q7p-SU-4Tb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbz-Vb-PPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2877" y="498"/>
+        </scene>
         <!--Second View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
@@ -347,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="What would you like to work on today?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="29h-N2-YGT">
-                                <rect key="frame" x="20" y="25" width="280" height="72"/>
+                                <rect key="frame" x="20" y="32" width="280" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -365,7 +413,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9q-Hb-FLS" userLabel="viewCurrentGoals">
-                                <rect key="frame" x="20" y="105" width="280" height="374"/>
+                                <rect key="frame" x="20" y="135" width="280" height="344"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -454,6 +502,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="janette.png" width="630" height="646"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
