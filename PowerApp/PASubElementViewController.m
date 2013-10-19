@@ -61,7 +61,6 @@
     self.title = elementName;
     NSLog(@"Element name: %@", elementName);
     NSLog(@"Subelement name: %@", subelementName);
-//    self.labelHeader.text = [NSString stringWithFormat:@"%@ > %@", self.elementName, self.subelementName];
     self.labelHeader.text = subelementName;
 }
 
@@ -173,6 +172,14 @@
     self.view.frame = rect;
     
     [UIView commitAnimations];
+}
+- (IBAction)remindButtonPressed:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remind me"
+                                                    message:@"Okay! I'll remind you to do this later."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 -(void)keyboardWillShow {

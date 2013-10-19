@@ -227,8 +227,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Build an incredible company" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-yI-EuY">
-                                <rect key="frame" x="20" y="66" width="280" height="65"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Build an incredible company" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="20" preferredMaxLayoutWidth="299" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-yI-EuY">
+                                <rect key="frame" x="10" y="66" width="299" height="65"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -316,6 +316,9 @@
                                 <state key="normal" title="Remind me to do this!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="remindButtonPressed:" destination="ty0-Uf-qet" eventType="touchUpInside" id="Z4K-tT-5dI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
